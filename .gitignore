@@ -7,6 +7,9 @@ Makefile
 narray_config.h
 *.o
 narray.so
+narray.bundle
+narray.dylib
+narray.dll
 mkmf.log
 na_math.c
 na_op.c
@@ -14,5 +17,6 @@ na_op.c
 pkg/
 src
 doc
+tags
 
 narray-*.gem
