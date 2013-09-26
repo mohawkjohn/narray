@@ -1,6 +1,6 @@
 open("src/narray.h") do |f|
   f.each_line do |l|
-    if /NARRAY_VERSION "([\d.]+)"/ =~ l
+    if /NARRAY_VERSION "([\d.]+(\.pre)?)"/ =~ l
       NARRAY_VERSION = $1
       break
     end
