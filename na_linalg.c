@@ -616,9 +616,9 @@ void Init_na_linalg()
   na_funcset[NA_ROBJ].zero = (char*)&zerov;
   na_funcset[NA_ROBJ].one  = (char*)&onev;
 
-  cNVector = rb_define_class("NVector",cNArray);
-  cNMatrix = rb_define_class("NMatrix",cNArray);
-  cNMatrixLU = rb_define_class("NMatrixLU",rb_cObject);
+  cNVector = rb_define_class_under(cNArray, "NVector",cNArray);
+  cNMatrix = rb_define_class_under(cNArray, "NMatrix",cNArray);
+  cNMatrixLU = rb_define_class_under(cNArray, "NMatrixLU",rb_cObject);
 
   rb_define_method(cNMatrix, "lu_fact!", na_lu_fact_bang, 0);
   rb_define_alias(cNMatrix,  "lu!","lu_fact!");

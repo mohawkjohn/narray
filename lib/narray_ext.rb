@@ -57,9 +57,9 @@ class NArray
       shape == other.shape &&
       case typecode
       when NArray::OBJECT
-	to_a.eql? other.to_a
+  to_a.eql? other.to_a
       else
-	to_s.eql? other.to_s
+  to_s.eql? other.to_s
       end
   end
 
@@ -219,9 +219,9 @@ class NArray
       idx = (r<1).where
       idx = idx[0...n] if idx.size > n
       if idx.size>0
-	rr[i] = r[idx]
-	xx[i] = x[idx]
-	i += idx.size
+  rr[i] = r[idx]
+  xx[i] = x[idx]
+  i += idx.size
       end
     end
     # Box-Muller transform
@@ -279,74 +279,74 @@ class NArray
   end
 
   #SFloatOne = NArray.sfloat(1).fill!(1)
-end
 
+  module NMath
+    PI = Math::PI
+    E = Math::E
 
-module NMath
-  PI = Math::PI
-  E = Math::E
+    def recip x
+      1/x.to_f
+    end
 
-  def recip x
-    1/x.to_f
+  # Trigonometric function
+    def csc x
+      1/sin(x)
+    end
+    def csch x
+      1/sinh(x)
+    end
+    def acsc x
+      asin(1/x.to_f)
+    end
+    def acsch x
+      asinh(1/x.to_f)
+    end
+
+    def sec x
+      1/cos(x)
+    end
+    def sech x
+      1/cosh(x)
+    end
+    def asec x
+      acos(1/x.to_f)
+    end
+    def asech x
+      acosh(1/x.to_f)
+    end
+
+    def cot x
+      1/tan(x)
+    end
+    def coth x
+      1/tanh(x)
+    end
+    def acot x
+      atan(1/x.to_f)
+    end
+    def acoth x
+      atanh(1/x.to_f)
+    end
+
+  # Statistics
+    def covariance(x,y,*ranks)
+      x = NArray.to_na(x) unless x.kind_of?(NArray)
+      x = x.to_type(NArray::DFLOAT) if x.integer?
+      y = NArray.to_na(y) unless y.kind_of?(NArray)
+      y = y.to_type(NArray::DFLOAT) if y.integer?
+      n = x.rank_total(*ranks)
+      xm = x.accum(*ranks).div!(n)
+      ym = y.accum(*ranks).div!(n)
+      ((x-xm)*(y-ym)).sum(*ranks) / (n-1)
+    end
+
+    module_function :recip
+    module_function :csc,:sec,:cot,:csch,:sech,:coth
+    module_function :acsc,:asec,:acot,:acsch,:asech,:acoth
+    module_function :covariance
   end
 
-# Trigonometric function
-  def csc x
-    1/sin(x)
-  end
-  def csch x
-    1/sinh(x)
-  end
-  def acsc x
-    asin(1/x.to_f)
-  end
-  def acsch x
-    asinh(1/x.to_f)
-  end
-
-  def sec x
-    1/cos(x)
-  end
-  def sech x
-    1/cosh(x)
-  end
-  def asec x
-    acos(1/x.to_f)
-  end
-  def asech x
-    acosh(1/x.to_f)
-  end
-
-  def cot x
-    1/tan(x)
-  end
-  def coth x
-    1/tanh(x)
-  end
-  def acot x
-    atan(1/x.to_f)
-  end
-  def acoth x
-    atanh(1/x.to_f)
-  end
-
-# Statistics
-  def covariance(x,y,*ranks)
-    x = NArray.to_na(x) unless x.kind_of?(NArray)
-    x = x.to_type(NArray::DFLOAT) if x.integer?
-    y = NArray.to_na(y) unless y.kind_of?(NArray)
-    y = y.to_type(NArray::DFLOAT) if y.integer?
-    n = x.rank_total(*ranks)
-    xm = x.accum(*ranks).div!(n)
-    ym = y.accum(*ranks).div!(n)
-    ((x-xm)*(y-ym)).sum(*ranks) / (n-1)
-  end
-
-  module_function :recip
-  module_function :csc,:sec,:cot,:csch,:sech,:coth
-  module_function :acsc,:asec,:acot,:acsch,:asech,:acoth
-  module_function :covariance
-end
+end # class NArray
 
 
 module FFTW

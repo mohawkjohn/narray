@@ -770,7 +770,7 @@ print <<EOM
 void Init_nmath(void)
 {
   /* define ExtMath module */
-  rb_mNMath = rb_define_module("NMath");
+  rb_mNMath = rb_define_module_under(cNArray,"NMath");
 
   /* methods */
 EOM

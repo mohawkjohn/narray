@@ -1286,7 +1286,7 @@ void
     Init_na_funcs();
     Init_na_random();
 
-    cNArrayScalar = rb_define_class("NArrayScalar", cNArray);
+    cNArrayScalar = rb_define_class_under(cNArray, "NArrayScalar", cNArray);
 
     na_id_beg  	= rb_intern("begin");
     na_id_end  	= rb_intern("end");
