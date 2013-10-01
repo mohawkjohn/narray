@@ -50,6 +50,7 @@ src/lib/nmatrix.rb
     --exclude src/lib/
     --exclude .*\.o
     --exclude narray\.so
+    --exclude narray\.dll
     --exclude narray\.bundle
     --exclude narray\.dylib
     --exclude libnarray\.*
