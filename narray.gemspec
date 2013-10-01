@@ -56,6 +56,7 @@ src/lib/nmatrix.rb
   ]
   s.homepage = "http://narray.rubyforge.org/"
   s.require_paths = ["."]
+  s.required_ruby_version = '>= 1.8.0'
   s.rubyforge_project = "narray"
   s.rubygems_version = "1.8.10"
   s.summary = "N-dimensional Numerical Array class for Ruby"
