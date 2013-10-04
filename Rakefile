@@ -3,7 +3,7 @@ require 'rubygems/package_task'
 
 FileUtils.ln_s('.', 'src') if !File.symlink?('src')
 
-load './narray.gemspec'
+load './narray-nmatrix.gemspec'
 
 pkgtsk = Gem::PackageTask.new(GEMSPEC) do |pkg|
   pkg.need_zip = true

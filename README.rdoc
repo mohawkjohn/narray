@@ -1,0 +1,66 @@
+= NArray: NMatrix-compatible fork
+
+* {NArray}[http://narray.rubyforge.org/]
+* {sciruby.com}[http://sciruby.com]
+
+== Description
+
+NArray is the Ruby array library that inspired SciRuby's {NMatrix}[http://github.com/SciRuby/nmatrix].It was written by
+Masahiro Tanaka.
+
+This version is an NMatrix-compatible fork. It can be used just like regular NArray -- except when you're trying to use
+it with NMatrix. See below for details.
+
+FFTW does not currently work with SciRuby's nmatrix gem. If you'd like it to work, send an email our way.
+
+Note that this is not Masahiro Tanaka's original README file. Please see README.en for English and README.ja for Japanese.
+
+== Installation
+
+To install:
+
+    gem install narray-nmatrix --pre
+
+Note that you have to have the pre-release flag on there or gem won't be able to find it.
+
+== Documentation
+
+Please see {the NArray Rubyforge page}[http://narray.rubyforge.org/] for NArray documentation.
+
+== Using without SciRuby's NMatrix
+
+Just like normal:
+
+    require 'narray'
+
+== Using with SciRuby's NMatrix
+
+Do *not* require as above. Instead, try this:
+
+    require 'narray/narray'
+    require 'nmatrix'
+
+This preserves the NArray submodules NMath, NArrayScalar, NMatrix, NMatrixLU, and NVector inside of the NArray
+namespace. Basically, anytime those appear in your code, just add NArray:: in front.
+
+    NArray::NMatrix   # NArray's NMatrix class
+    NMatrix           # SciRuby's NMatrix class
+
+Easy!
+
+== License
+
+This is NArray's license:
+
+    This program is free software.
+    You can distribute/modify this program
+    under the same terms as Ruby itself.
+    NO WARRANTY.
+
+You can find it in the README.en and README.ja files.
+
+== Donations
+
+Support a SciRuby Fellow:
+
+{<img src=http://pledgie.com/campaigns/15783.png?skin_name=chrome>}[http://www.pledgie.com/campaigns/15783]
