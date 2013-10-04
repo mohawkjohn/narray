@@ -1,4 +1,4 @@
-require 'narray'
+require 'narray/narray'
 
 def testop(a,b)
   print "a = "; p a

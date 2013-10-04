@@ -1,6 +1,6 @@
-require "narray"
+require "narray/narray"
 
-m = NMatrix.float(3,3,3).indgen!
+m = NArray::NMatrix.float(3,3,3).indgen!
 
 puts
 puts 'm  #=>'

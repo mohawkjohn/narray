@@ -1,4 +1,4 @@
-require 'narray'
+require 'narray/narray'
 #require 'irb/xmp'
 # xmp :: http://www.ruby-lang.org/en/raa-list.rhtml?name=xmp
 def xp(s)
@@ -11,13 +11,13 @@ def xp(s)
   puts
 end
 
-$m1 = NMatrix.float(2,2).indgen!
-$m2 = NMatrix[[0,1.2],[1.5,0]]
+$m1 = NArray::NMatrix.float(2,2).indgen!
+$m2 = NArray::NMatrix[[0,1.2],[1.5,0]]
 
-$v1 = NVector[0.5,1.5]
-$v2 = NVector.float(2,2).indgen!
+$v1 = NArray::NVector[0.5,1.5]
+$v2 = NArray::NVector.float(2,2).indgen!
 
-$a  = NArray.float(2,2).indgen!
+$a  = NArray::NArray.float(2,2).indgen!
 
 xp '$m1'
 xp '$m1.inverse'

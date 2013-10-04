@@ -1,4 +1,4 @@
-require 'narray'
+require 'narray/narray'
 
 def testround a
   print "a = ";  p a

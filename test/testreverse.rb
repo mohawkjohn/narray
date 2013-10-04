@@ -1,4 +1,4 @@
-require 'narray'
+require 'narray/narray'
 
 def px(a)
   puts a

@@ -1,5 +1,5 @@
-require 'narray'
-include NMath
+require 'narray/narray'
+include NArray::NMath
 
 def pr x
   x.each{|i|

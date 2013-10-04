@@ -8,4 +8,4 @@ begin
 rescue
 end
 
-require "narray"
+require "narray/narray"

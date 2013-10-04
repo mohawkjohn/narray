@@ -1,4 +1,4 @@
-require 'narray'
+require 'narray/narray'
 require 'rational'
 
 #class Rational
@@ -10,7 +10,7 @@ require 'rational'
 srand(1)
 n=5
 
-m = NMatrix.object(n,n).collect{Rational(rand(10))}
+m = NArray::NMatrix.object(n,n).collect{Rational(rand(10))}
 
 puts 'm  #=>'
 p m

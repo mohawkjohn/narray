@@ -1,5 +1,5 @@
-require "narray"
-include NMath
+require "narray/narray"
+include NArray::NMath
 
 def testm x,name
   f = "a#{name}(#{name}(x))"

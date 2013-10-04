@@ -1,5 +1,5 @@
-require "narray"
-include NMath
+require "narray/narray"
+include NArray::NMath
 
 x = NArray[65, 63, 67, 64, 68, 62, 70, 66, 68, 67, 69, 71]
 y = NArray[68, 66, 68, 65, 69, 66, 68, 65, 71, 67, 68, 70]

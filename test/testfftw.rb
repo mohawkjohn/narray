@@ -1,4 +1,6 @@
-require 'narray'
+# TEST IS BROKEN
+
+require 'narray/narray'
 
 x = NArray.complex(1024,1024).indgen!
 
@@ -13,4 +15,4 @@ p y
 exit
 
 x = NArray.complex(128,128).indgen!
-10000.times{ x = FFTW.fftw( x, 1 ) }
+10000.times{ x = NArray::FFTW.fftw( x, 1 ) }
